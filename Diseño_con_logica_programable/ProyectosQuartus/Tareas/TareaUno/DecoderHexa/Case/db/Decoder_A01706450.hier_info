@@ -1,0 +1,34 @@
+|Decoder_A01706450
+entrada[0] => Mux0.IN69
+entrada[0] => Mux1.IN134
+entrada[0] => Mux2.IN134
+entrada[0] => Mux3.IN134
+entrada[1] => Mux0.IN68
+entrada[1] => Mux1.IN133
+entrada[1] => Mux2.IN133
+entrada[1] => Mux3.IN133
+entrada[2] => Mux1.IN132
+entrada[2] => Mux2.IN132
+entrada[2] => Mux3.IN132
+entrada[3] => Mux0.IN67
+entrada[3] => Mux1.IN131
+entrada[3] => Mux2.IN131
+entrada[3] => Mux3.IN131
+entrada[4] => Mux0.IN66
+entrada[4] => Mux1.IN130
+entrada[4] => Mux2.IN130
+entrada[4] => Mux3.IN130
+entrada[5] => Mux0.IN65
+entrada[5] => Mux1.IN129
+entrada[5] => Mux2.IN129
+entrada[5] => Mux3.IN129
+entrada[6] => Mux0.IN64
+entrada[6] => Mux1.IN128
+entrada[6] => Mux2.IN128
+entrada[6] => Mux3.IN128
+salida[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+salida[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+salida[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+salida[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

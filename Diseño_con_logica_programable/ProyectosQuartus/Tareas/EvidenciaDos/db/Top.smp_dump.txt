@@ -1,0 +1,12 @@
+
+State Machine - |Top|UC:U2|pres_state
+Name pres_state.AcumPer2 pres_state.AcumTem2 pres_state.AcumPer1 pres_state.AcumTem1 pres_state.Dato1 pres_state.MemoriaTemp1 pres_state.Instruccion pres_state.Memoria pres_state.Inicio 
+pres_state.Inicio 0 0 0 0 0 0 0 0 0 
+pres_state.Memoria 0 0 0 0 0 0 0 1 1 
+pres_state.Instruccion 0 0 0 0 0 0 1 0 1 
+pres_state.MemoriaTemp1 0 0 0 0 0 1 0 0 1 
+pres_state.Dato1 0 0 0 0 1 0 0 0 1 
+pres_state.AcumTem1 0 0 0 1 0 0 0 0 1 
+pres_state.AcumPer1 0 0 1 0 0 0 0 0 1 
+pres_state.AcumTem2 0 1 0 0 0 0 0 0 1 
+pres_state.AcumPer2 1 0 0 0 0 0 0 0 1 

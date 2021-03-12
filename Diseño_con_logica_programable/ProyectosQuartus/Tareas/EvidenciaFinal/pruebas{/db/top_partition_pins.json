@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SegH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SegH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SegL[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk50Mhz",
+					"strict" : false
+				},
+				{
+					"name" : "Clr",
+					"strict" : false
+				},
+				{
+					"name" : "En",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Inrs[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

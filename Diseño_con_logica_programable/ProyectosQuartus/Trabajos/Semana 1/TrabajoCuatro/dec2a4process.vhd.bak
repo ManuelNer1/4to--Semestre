@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+-- Decoder 2 a 4 con process
+entity dec2a4process is
+port (
+			entrada : in  std_logic_vector (3 downto 0);
+			salida  : out std_logic_vector (2 downto 0));
+end dec2a4process;
+
+architecture a of dec2a4process is
+begin
+	process(entrada)
+	begin
+	if entrada == "00" then
+		salida <= "0001";
+	elsif entrada == "01"then
+		salida <= "0010";
+	elsif entrada == "10" then
+		salida <= "0100";
+	elsif entrada == "1000" then
+		salida <= "1000";
+	else
+		salida <= "0000";
+	end if;
+	end process;
+end a;

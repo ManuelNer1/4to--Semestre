@@ -1,0 +1,96 @@
+|Top
+Clk => FreqDiv:U1.Clk
+Clk => UC:U2.Clk
+Rst => FreqDiv:U1.Rst
+Rst => UC:U2.Rst
+Data => UC:U2.Data
+AP << UC:U2.AP
+AT << UC:U2.AT
+RD << UC:U2.RD
+RI << UC:U2.RI
+PC << UC:U2.PC
+MM << UC:U2.MM
+OFF[0] << <GND>
+OFF[1] << <GND>
+OFF[2] << <GND>
+OFF[3] << <GND>
+
+
+|Top|FreqDiv:U1
+Clk => ClkEn~reg0.CLK
+Clk => OscCount[0].CLK
+Clk => OscCount[1].CLK
+Clk => OscCount[2].CLK
+Clk => OscCount[3].CLK
+Clk => OscCount[4].CLK
+Clk => OscCount[5].CLK
+Clk => OscCount[6].CLK
+Clk => OscCount[7].CLK
+Clk => OscCount[8].CLK
+Clk => OscCount[9].CLK
+Clk => OscCount[10].CLK
+Clk => OscCount[11].CLK
+Clk => OscCount[12].CLK
+Clk => OscCount[13].CLK
+Clk => OscCount[14].CLK
+Clk => OscCount[15].CLK
+Clk => OscCount[16].CLK
+Clk => OscCount[17].CLK
+Clk => OscCount[18].CLK
+Clk => OscCount[19].CLK
+Clk => OscCount[20].CLK
+Clk => OscCount[21].CLK
+Clk => OscCount[22].CLK
+Clk => OscCount[23].CLK
+Clk => OscCount[24].CLK
+Rst => OscCount[0].ACLR
+Rst => OscCount[1].ACLR
+Rst => OscCount[2].ACLR
+Rst => OscCount[3].ACLR
+Rst => OscCount[4].ACLR
+Rst => OscCount[5].ACLR
+Rst => OscCount[6].ACLR
+Rst => OscCount[7].ACLR
+Rst => OscCount[8].ACLR
+Rst => OscCount[9].ACLR
+Rst => OscCount[10].ACLR
+Rst => OscCount[11].ACLR
+Rst => OscCount[12].ACLR
+Rst => OscCount[13].ACLR
+Rst => OscCount[14].ACLR
+Rst => OscCount[15].ACLR
+Rst => OscCount[16].ACLR
+Rst => OscCount[17].ACLR
+Rst => OscCount[18].ACLR
+Rst => OscCount[19].ACLR
+Rst => OscCount[20].ACLR
+Rst => OscCount[21].ACLR
+Rst => OscCount[22].ACLR
+Rst => OscCount[23].ACLR
+Rst => OscCount[24].ACLR
+Rst => ClkEn~reg0.ENA
+ClkEn <= ClkEn~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|UC:U2
+Clk => pres_state~10.DATAIN
+Rst => pres_state~12.DATAIN
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+ClkEn => pres_state.OUTPUTSELECT
+Data => next_state.MemoriaTemp1.DATAB
+Data => next_state.AcumTem2.DATAB
+AP <= AP.DB_MAX_OUTPUT_PORT_TYPE
+AT <= AT.DB_MAX_OUTPUT_PORT_TYPE
+RD <= RD.DB_MAX_OUTPUT_PORT_TYPE
+RI <= RI.DB_MAX_OUTPUT_PORT_TYPE
+PC <= PC.DB_MAX_OUTPUT_PORT_TYPE
+MM <= MM.DB_MAX_OUTPUT_PORT_TYPE
+
+

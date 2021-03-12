@@ -1,0 +1,7 @@
+
+State Machine - |Top|VGA:C01|pr_state
+Name pr_state.BP_HS pr_state.PU_HS pr_state.FP_HS pr_state.AL_HS 
+pr_state.AL_HS 0 0 0 0 
+pr_state.FP_HS 0 0 1 1 
+pr_state.PU_HS 0 1 0 1 
+pr_state.BP_HS 1 0 0 1 

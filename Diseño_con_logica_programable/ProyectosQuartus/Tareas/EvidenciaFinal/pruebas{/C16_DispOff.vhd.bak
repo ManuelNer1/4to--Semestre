@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company:        ITESM - Campus Qro.
+-- Engineer:   Marcela Ibarra Mora
+--					Mariana Castro Payns
+--					José Manuel Neri Villeda
+-- 
+-- Create Date:    17:30  08/03/2021 
+-- Project Name: 	 C15_ClkDiv
+--
+-- Description:    Risc Processor Top
+--
+----------------------------------------------------------------------------------
+
+entity C16_DispOff is
+	Port(
+		Turnoff : out std_logic_vector(31 downto 0);
+	  );
+	  
+end C16_DispOff;
+
+architecture rtl of C16_DispOff is 
+begin 
+end rtl;

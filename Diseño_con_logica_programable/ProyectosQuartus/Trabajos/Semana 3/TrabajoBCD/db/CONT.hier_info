@@ -1,0 +1,19 @@
+|CONT
+Rst => Count[0].ACLR
+Rst => Count[1].ACLR
+Rst => Count[2].ACLR
+Rst => Count[3].ACLR
+Clk => Count[0].CLK
+Clk => Count[1].CLK
+Clk => Count[2].CLK
+Clk => Count[3].CLK
+X => Count.OUTPUTSELECT
+X => Count.OUTPUTSELECT
+X => Count.OUTPUTSELECT
+X => Count.OUTPUTSELECT
+S[0] << Count[0].DB_MAX_OUTPUT_PORT_TYPE
+S[1] << Count[1].DB_MAX_OUTPUT_PORT_TYPE
+S[2] << Count[2].DB_MAX_OUTPUT_PORT_TYPE
+S[3] << Count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

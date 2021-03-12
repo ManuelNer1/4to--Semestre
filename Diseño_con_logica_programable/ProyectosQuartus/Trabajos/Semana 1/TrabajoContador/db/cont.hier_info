@@ -1,0 +1,9 @@
+|cont
+CLK => count[0].CLK
+CLK => count[1].CLK
+RST => count[0].ACLR
+RST => count[1].ACLR
+salida[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+salida[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

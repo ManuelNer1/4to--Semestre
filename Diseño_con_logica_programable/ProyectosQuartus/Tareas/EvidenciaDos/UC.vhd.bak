@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company:        ITESM - Campus Qro.
+-- Engineer:       José Manuel Neri Villeda
+-- 
+-- Create Date:    17:53:00  26/02/2021 
+-- Design Name: 
+-- Module Name:    FreqDiv
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description:    Unidad de control
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;

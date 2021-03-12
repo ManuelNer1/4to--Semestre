@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "AP",
+					"strict" : false
+				},
+				{
+					"name" : "AT",
+					"strict" : false
+				},
+				{
+					"name" : "RD",
+					"strict" : false
+				},
+				{
+					"name" : "RI",
+					"strict" : false
+				},
+				{
+					"name" : "PC",
+					"strict" : false
+				},
+				{
+					"name" : "MM",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Rst",
+					"strict" : false
+				},
+				{
+					"name" : "Data",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

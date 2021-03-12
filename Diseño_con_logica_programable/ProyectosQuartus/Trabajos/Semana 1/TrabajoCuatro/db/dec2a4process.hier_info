@@ -1,0 +1,15 @@
+|dec2a4process
+entrada[0] => Equal0.IN1
+entrada[0] => Equal1.IN1
+entrada[0] => Equal2.IN0
+entrada[0] => Equal3.IN1
+entrada[1] => Equal0.IN0
+entrada[1] => Equal1.IN0
+entrada[1] => Equal2.IN1
+entrada[1] => Equal3.IN0
+salida[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+salida[1] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+salida[2] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+salida[3] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+
+

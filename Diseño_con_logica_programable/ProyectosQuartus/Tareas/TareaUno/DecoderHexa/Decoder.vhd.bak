@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+-- Decoder a 7 segmentos
+entity Decoder is 
+port(
+	entrada: in std_logic_vector (6 downto 0); --entrada de a,b,c,d,e,f,g como vector
+	salida :in std_logic );
+end Decoder;
+
+architecture a of Decoder is
+begin 
+	salida <= "0" when entrada = "0000000" else
+				 "1" when entrada(2) = '1' else
+				 "2" when entrada(1) = '1' else
+				 "3" when entrada(0) = '1' else
+				 "4";
+end a;

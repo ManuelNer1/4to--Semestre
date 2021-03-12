@@ -1,0 +1,43 @@
+----------------------------------------------------------------------------------
+-- Company:        ITESM - CQ        
+-- Engineer:       Rick
+-- 
+-- Create Date:    11:18:22 10/16/2019 
+-- Design Name: 
+-- Module Name:    Serial_Comm_Nexys3_To_PC - Serial_Comm_Nexys3_To_PC_Arch 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description:    Serial Communications from Nexy3 board to a PC
+--                 Every time the center Pushbutton is pressed
+--                 the ASCII character given by the switches
+--                 will be transmitted serially to a PC
+--                 Settings:
+--                    Baud Rate: 9600 bits per second (bps)
+--                    Data Size: 8 bits
+--                    Paritry: No parity
+--                    Stop bits: 1 bit
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+-- Commonly uses libraries and packages
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+
+entity Serial_Comm_DE10Lite_To_PC is
+    Port ( ASCII : in  STD_LOGIC_VECTOR (7 downto 0);
+           Rst   : in  STD_LOGIC;
+           Clk   : in  STD_LOGIC;
+           Load  : in  STD_LOGIC;
+           Tx    : out  STD_LOGIC);
+end Serial_Comm_DE10Lite_To_PC;
+
+architecture Serial_Comm_DE10Lite_To_PC_Arch of Serial_Comm_DE10Lite_To_PC is
+begin
+end Serial_Comm_DE10Lite_To_PC_Arch;

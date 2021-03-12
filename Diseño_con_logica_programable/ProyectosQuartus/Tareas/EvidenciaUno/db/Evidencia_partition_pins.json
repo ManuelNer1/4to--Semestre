@@ -1,0 +1,153 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[0]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[1]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[2]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[3]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[4]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[5]",
+					"strict" : false
+				},
+				{
+					"name" : "salida[6]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "salida1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "salida2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "op2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "op2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "op2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcion[1]",
+					"strict" : false
+				},
+				{
+					"name" : "opcion[2]",
+					"strict" : false
+				},
+				{
+					"name" : "opcion[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cin",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

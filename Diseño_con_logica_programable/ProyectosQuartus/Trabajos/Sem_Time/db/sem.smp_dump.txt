@@ -1,0 +1,7 @@
+
+State Machine - |sem|pres_state
+Name pres_state.St_Amber pres_state.St_Green pres_state.St_RedAmber pres_state.St_Red 
+pres_state.St_Red 0 0 0 0 
+pres_state.St_RedAmber 0 0 1 1 
+pres_state.St_Green 0 1 0 1 
+pres_state.St_Amber 1 0 0 1 

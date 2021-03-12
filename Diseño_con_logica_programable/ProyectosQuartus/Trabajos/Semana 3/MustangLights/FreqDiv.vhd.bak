@@ -1,0 +1,34 @@
+----------------------------------------------------------------------------------
+-- Company: 			ITESM -- Campus Qro.
+-- Engineer: 			A01706450 - Jose Manuel 
+-- 
+-- Create Date:    	04:44 pm 22/02/2021 
+-- Design Name: 		
+-- Module Name:    	Top - Behavioral
+-- Project Name: 		Ford Mustang Ligths
+-- Target Devices: 	MAX LITe - 10 FPGA Board
+-- Tool versions: 	Quartus Prime Lite 18.1
+-- Description: 		https://www.youtube.com/watch?v=jIjY7mERBrw
+	--
+-- Dependencies: 
+--
+-- Revision: 			v1.0
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+
+-- Library and Package declaration (commonly used)
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity FreqDiv is
+  port (
+    Clk 	: in std_logic;
+	 Rst 	: in std_logic;
+    Clke : out std_logic
+  );
+ end FreqDiv
+architecture rtl of FreqDiv is

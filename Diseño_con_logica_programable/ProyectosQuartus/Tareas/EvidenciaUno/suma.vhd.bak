@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_signed.all;
+--Suma rs y op2 = rd
+entity evidencia is
+port( rs, op2: std_logic_vector ( 2 downto 0 );
+		suma : out std_logic_vector ( 3 downto 0);
+end adder4bits;
+
+architecture a of evidencia is 
+begin 
+	suma <= a + b;
+end a

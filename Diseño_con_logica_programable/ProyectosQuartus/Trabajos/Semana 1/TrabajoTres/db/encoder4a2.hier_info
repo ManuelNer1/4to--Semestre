@@ -1,0 +1,15 @@
+|encoder4a2
+entrada[0] => salida.DATAA
+entrada[1] => salida.OUTPUTSELECT
+entrada[1] => salida.DATAA
+entrada[2] => salida.OUTPUTSELECT
+entrada[2] => salida.OUTPUTSELECT
+entrada[2] => salida.DATAA
+entrada[3] => salida.OUTPUTSELECT
+entrada[3] => salida.OUTPUTSELECT
+entrada[3] => salida.OUTPUTSELECT
+salida[0] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+salida[1] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+salida[2] <= salida.DB_MAX_OUTPUT_PORT_TYPE
+
+
