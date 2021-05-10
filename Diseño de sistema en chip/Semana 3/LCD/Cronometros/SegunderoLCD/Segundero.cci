@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:528DA6F9
+NODE:I LEVEL:0 LINE:17 "D:\Aplicaciones\Cvavreval\inc\io.h"
+NODE:I LEVEL:0 LINE:18 "D:\Aplicaciones\Cvavreval\inc\delay.h"
+NODE:I LEVEL:0 LINE:19 "D:\Aplicaciones\Cvavreval\inc\display.h"
+NODE:I LEVEL:0 LINE:20 "D:\Aplicaciones\Cvavreval\inc\mega2560.h"
+NODE:I LEVEL:0 LINE:21 "D:\Aplicaciones\Cvavreval\inc\stdio.h"
+NODE:V LEVEL:0 LINE:23 "seg -> R3"
+NODE:V LEVEL:0 LINE:25 "Cadena -> RAM:????"
+NODE:F LEVEL:0 LINE:27 "main(void)"

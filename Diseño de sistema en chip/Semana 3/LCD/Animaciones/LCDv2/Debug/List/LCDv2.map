@@ -1,0 +1,28 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+car0                                                                              0x0300       8
+car1                                                                              0x0308       8
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            R4           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x00091     41
+PulseEn                                                                           0x000BA      3
+SendDataBitsLCD                                                                   0x000BD     24
+WriteComandLCD                                                                    0x000D5      5
+CharLCD                                                                           0x000DA     27
+StringLCD                                                                         0x000F5     20
+EraseLCD                                                                          0x00109      3
+MoveCursor                                                                        0x0010C     36
+CreateChar                                                                        0x00130     26
+main                                                                              0x0014A     50

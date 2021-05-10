@@ -1,0 +1,17 @@
+/*
+ * ondactc.c
+ *
+ * Created: 20/04/2021 11:56:21 a. m.
+ * Author: ManuelNeri
+ */
+
+#include <mega328p.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

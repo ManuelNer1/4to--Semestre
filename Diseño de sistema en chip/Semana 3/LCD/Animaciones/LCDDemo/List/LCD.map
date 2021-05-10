@@ -1,0 +1,32 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+car0                                                                              0x0300       8
+car1                                                                              0x0308       8
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            R5           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x00087     41
+PulseEn                                                                           0x000B0      3
+SendDataBitsLCD                                                                   0x000B3     27
+WriteComandLCD                                                                    0x000CE      5
+CharLCD                                                                           0x000D3      5
+StringLCD                                                                         0x000D8     14
+StringLCD2                                                                        0x000E6     17
+MoveCursor                                                                        0x000F7     31
+UnderscoreCursor                                                                  0x00116      3
+NoUnderscoreCursor                                                                0x00119      2
+BlinkCursor                                                                       0x0011B      3
+NoBlinkCursor                                                                     0x0011E      5
+CreateChar                                                                        0x00123     27
+main                                                                              0x0013E     48

@@ -1,0 +1,36 @@
+/*
+ * prueba.c
+ *
+ * Created: 29/04/2021 10:21:49 a. m.
+ * Author: ManuelNeri
+ */
+
+#include <io.h>
+#include <delay.h>
+#include <stdio.h>
+
+float distancia;
+unsigned int distDig;
+
+void main(void){
+    // USART0 initialization
+    // Communication Parameters: 8 Data, 1 Stop, No Parity
+    // USART0 Receiver: On
+    // USART0 Transmitter: On
+    // USART0 Mode: Asynchronous
+    // USART0 Baud Rate: 9600
+    UCSR0A=0;
+    UCSR0B=0x18;
+    UCSR0C=0x06;
+    UBRR0H=0x00;
+    UBRR0L=0x67;
+    
+    DDRC.0=1;   //Salida trigger
+    PORTC.1=1;  //Pull up echo
+    
+    while (1){
+    
+        printf("La distancia del sensor es ");
+
+    }
+}

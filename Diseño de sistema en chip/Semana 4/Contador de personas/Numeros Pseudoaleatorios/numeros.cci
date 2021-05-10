@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:52935A09
+NODE:I LEVEL:0 LINE:18 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\mega2560.h"
+NODE:I LEVEL:0 LINE:19 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\display.h"
+NODE:I LEVEL:0 LINE:20 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\delay.h"
+NODE:I LEVEL:0 LINE:21 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\stdlib.h"
+NODE:I LEVEL:0 LINE:22 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\stdio.h"
+NODE:V LEVEL:0 LINE:24 "num -> R5,R6"
+NODE:V LEVEL:0 LINE:25 "Cadena -> RAM:????"
+NODE:V LEVEL:0 LINE:26 "i -> R3"
+NODE:F LEVEL:0 LINE:28 "main(void)"

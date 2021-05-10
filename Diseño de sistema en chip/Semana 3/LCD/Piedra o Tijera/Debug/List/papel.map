@@ -1,0 +1,30 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            R4           1
+A                                                                                 R3           1
+B                                                                                 R6           1
+TiroA                                                                             R5           1
+TiroB                                                                             R8           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x000B0     41
+PulseEn                                                                           0x000D9      3
+SendDataBitsLCD                                                                   0x000DC     24
+WriteComandLCD                                                                    0x000F4      5
+CharLCD                                                                           0x000F9     27
+StringLCD                                                                         0x00114     20
+MoveCursor                                                                        0x00128     36
+ImprimeMarcador                                                                   0x0014C     15
+ImprimeTiro                                                                       0x0015B     43
+main                                                                              0x00186    134

@@ -1,0 +1,17 @@
+/*
+ * onda.c
+ *
+ * Created: 20/04/2021 02:31:50 p. m.
+ * Author: ManuelNeri
+ */
+
+#include <mega328p.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

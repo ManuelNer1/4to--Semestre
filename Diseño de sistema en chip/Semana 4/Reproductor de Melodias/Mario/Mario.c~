@@ -1,0 +1,17 @@
+/*
+ * Mario.c
+ *
+ * Created: 20/04/2021 10:20:15 a. m.
+ * Author: ManuelNeri
+ */
+
+#include <mega328p.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

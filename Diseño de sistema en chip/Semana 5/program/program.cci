@@ -1,0 +1,6 @@
+VERSION:3 SOURCE_TIMESTAMP:529A5362
+NODE:I LEVEL:0 LINE:8 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\mega328p.h"
+NODE:I LEVEL:0 LINE:9 "D:\Aplicaciones\Aplicaciones\CodeVision\inc\delay.h"
+NODE:C LEVEL:0 LINE:11 "seno -> FLASH"
+NODE:V LEVEL:0 LINE:20 "i -> RAM:????"
+NODE:F LEVEL:0 LINE:22 "main(void)"

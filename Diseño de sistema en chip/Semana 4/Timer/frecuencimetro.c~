@@ -1,0 +1,17 @@
+/*
+ * frecuencimetro.c
+ *
+ * Created: 19/04/2021 09:23:31 a. m.
+ * Author: ManuelNeri
+ */
+
+#include <mega2560.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

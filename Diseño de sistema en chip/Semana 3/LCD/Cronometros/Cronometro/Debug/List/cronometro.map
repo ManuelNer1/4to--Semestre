@@ -1,0 +1,38 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+Cadena                                                                            0x0300       8
+mono0                                                                             0x0308       8
+mono1                                                                             0x0310       8
+aire0                                                                             0x0318       8
+aire1                                                                             0x0320       8
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            R4           1
+decimas                                                                           R3           1
+seg                                                                               R6           1
+min                                                                               R5           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x0009B     41
+PulseEn                                                                           0x000C4      3
+SendDataBitsLCD                                                                   0x000C7     24
+WriteComandLCD                                                                    0x000DF      5
+CharLCD                                                                           0x000E4     27
+StringLCDVar                                                                      0x000FF     17
+MoveCursor                                                                        0x00110     36
+CreateChar                                                                        0x00134     23
+main                                                                              0x0014B     94
+put_buff_G100                                                                     0x001A9     43
+_print_G100                                                                       0x001D4    294
+sprintf                                                                           0x002FA     49
+strlen                                                                            0x0032B     12
+strlenf                                                                           0x00337     13

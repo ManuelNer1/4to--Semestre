@@ -1,0 +1,5 @@
+VERSION:3 SOURCE_TIMESTAMP:528C86D7
+NODE:I LEVEL:0 LINE:8 "D:\Aplicaciones\Cvavreval\inc\mega2560.h"
+NODE:V LEVEL:0 LINE:13 "SieteSeg -> RAM:????"
+NODE:V LEVEL:0 LINE:18 "dato -> R4"
+NODE:F LEVEL:0 LINE:20 "main(void)"
