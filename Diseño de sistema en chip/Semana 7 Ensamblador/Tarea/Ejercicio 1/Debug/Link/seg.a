@@ -1,0 +1,235 @@
+;/*
+; * seg.c
+; *
+; * Created: 21/05/2021 09:19:25 a. m.
+; * Author: ManuelNeri
+; */
+;
+;    #include <io.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x01
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x0E
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_adc_noise_red=0x02
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powerdown=0x04
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_powersave=0x06
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_standby=0x0C
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_ext_standby=0x0E
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=smcr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;void main()
+; 0000 000B {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+; 0000 000C     #asm
+;PCODE: $0000000E VOL: 0
+; 0000 000D     .EQU DDRD=0x0A
+    .EQU DDRD=0x0A
+;PCODE: $0000000F VOL: 0
+; 0000 000E     .EQU PORTC=8
+    .EQU PORTC=8
+;PCODE: $00000010 VOL: 0
+; 0000 000F     .EQU PINC=6
+    .EQU PINC=6
+;PCODE: $00000011 VOL: 0
+; 0000 0010     .EQU PORTD=0x0B
+    .EQU PORTD=0x0B
+;PCODE: $00000012 VOL: 0
+; 0000 0011 
+
+;PCODE: $00000013 VOL: 0
+; 0000 0012     Inicio:
+    Inicio:
+;PCODE: $00000014 VOL: 0
+; 0000 0013         LDI R16,0xFF
+        LDI R16,0xFF
+;PCODE: $00000015 VOL: 0
+; 0000 0014         OUT DDRD,R16            ;Salida en PDO A PD7
+        OUT DDRD,R16            ;Salida en PDO A PD7
+;PCODE: $00000016 VOL: 0
+; 0000 0015         LDI R16,0x30
+        LDI R16,0x30
+;PCODE: $00000017 VOL: 0
+; 0000 0016         OUT PORTC,R16           ;Pull-ups en PC4 y PC5
+        OUT PORTC,R16           ;Pull-ups en PC4 y PC5
+;PCODE: $00000018 VOL: 0
+; 0000 0017         CLR R17                 ;Seg
+        CLR R17                 ;Seg
+;PCODE: $00000019 VOL: 0
+; 0000 0018         CLR R1
+        CLR R1
+;PCODE: $0000001A VOL: 0
+; 0000 0019     Ciclo:
+    Ciclo:
+;PCODE: $0000001B VOL: 0
+; 0000 001A         LDI R31,high(Tabla*2)
+        LDI R31,high(Tabla*2)
+;PCODE: $0000001C VOL: 0
+; 0000 001B         LDI R30,low(Tabla*2)    ;Z apunta al primer elemento de la tabla (dir de 8 bits)
+        LDI R30,low(Tabla*2)    ;Z apunta al primer elemento de la tabla (dir de 8 bits)
+;PCODE: $0000001D VOL: 0
+; 0000 001C 
+
+;PCODE: $0000001E VOL: 0
+; 0000 001D         ADD R30,R17
+        ADD R30,R17
+;PCODE: $0000001F VOL: 0
+; 0000 001E         ADC R31,R1
+        ADC R31,R1
+;PCODE: $00000020 VOL: 0
+; 0000 001F         LPM                     ;Leer tabla (z en 8 bits) -> R0
+        LPM                     ;Leer tabla (z en 8 bits) -> R0
+;PCODE: $00000021 VOL: 0
+; 0000 0020         OUT PORTD, R0
+        OUT PORTD, R0
+;PCODE: $00000022 VOL: 0
+; 0000 0021         RCALL Delay1Seg
+        RCALL Delay1Seg
+;PCODE: $00000023 VOL: 0
+; 0000 0022 
+
+;PCODE: $00000024 VOL: 0
+; 0000 0023     Espera:
+    Espera:
+;PCODE: $00000025 VOL: 0
+; 0000 0024         SBIC PINC,5             ;PC5 esta en 1 ejecutara tambien la instruccion de abajo
+        SBIC PINC,5             ;PC5 esta en 1 ejecutara tambien la instruccion de abajo
+;PCODE: $00000026 VOL: 0
+; 0000 0025         RJMP Espera             ;Este salto me permite no continuar con el programa
+        RJMP Espera             ;Este salto me permite no continuar con el programa
+;PCODE: $00000027 VOL: 0
+; 0000 0026 
+
+;PCODE: $00000028 VOL: 0
+; 0000 0027         SBIC PINC,4             ;PC4 esta en 1 ejecutara tambien la instruccion de abajo
+        SBIC PINC,4             ;PC4 esta en 1 ejecutara tambien la instruccion de abajo
+;PCODE: $00000029 VOL: 0
+; 0000 0028         RJMP Resta              ;Este salto me permite cambiar a resta
+        RJMP Resta              ;Este salto me permite cambiar a resta
+;PCODE: $0000002A VOL: 0
+; 0000 0029 
+
+;PCODE: $0000002B VOL: 0
+; 0000 002A         INC R17                 ; INC = R17 + 1
+        INC R17                 ; INC = R17 + 1
+;PCODE: $0000002C VOL: 0
+; 0000 002B         CPI R17,10              ;Compara R17 CON 10
+        CPI R17,10              ;Compara R17 CON 10
+;PCODE: $0000002D VOL: 0
+; 0000 002C         BRNE Ciclo              ;Si no es igual a 10 continua Regresa a Ciclo
+        BRNE Ciclo              ;Si no es igual a 10 continua Regresa a Ciclo
+;PCODE: $0000002E VOL: 0
+; 0000 002D         CLR R17                 ;Al llegar a 10 mi R17 este se limpiara
+        CLR R17                 ;Al llegar a 10 mi R17 este se limpiara
+;PCODE: $0000002F VOL: 0
+; 0000 002E         RJMP Ciclo              ;Salta a Ciclo
+        RJMP Ciclo              ;Salta a Ciclo
+;PCODE: $00000030 VOL: 0
+; 0000 002F 
+
+;PCODE: $00000031 VOL: 0
+; 0000 0030     Resta:
+    Resta:
+;PCODE: $00000032 VOL: 0
+; 0000 0031         CPI R17,0               ;Compara R17 con 0
+        CPI R17,0               ;Compara R17 con 0
+;PCODE: $00000033 VOL: 0
+; 0000 0032         BREQ Ceros              ;Si R17 es igual a Cero Salta a Ceros, para cargar 10 a R17
+        BREQ Ceros              ;Si R17 es igual a Cero Salta a Ceros, para cargar 10 a R17
+;PCODE: $00000034 VOL: 0
+; 0000 0033         DEC R17                 ;Decrementa R17
+        DEC R17                 ;Decrementa R17
+;PCODE: $00000035 VOL: 0
+; 0000 0034         RJMP Ciclo              ;Salta a Ciclo
+        RJMP Ciclo              ;Salta a Ciclo
+;PCODE: $00000036 VOL: 0
+; 0000 0035 
+
+;PCODE: $00000037 VOL: 0
+; 0000 0036     Ceros:
+    Ceros:
+;PCODE: $00000038 VOL: 0
+; 0000 0037         LDI R17,10              ;Carga 10 a R17
+        LDI R17,10              ;Carga 10 a R17
+;PCODE: $00000039 VOL: 0
+; 0000 0038         RJMP Resta              ;Salta a Resta
+        RJMP Resta              ;Salta a Resta
+;PCODE: $0000003A VOL: 0
+; 0000 0039 
+
+;PCODE: $0000003B VOL: 0
+; 0000 003A     Delay1Seg:
+    Delay1Seg:
+;PCODE: $0000003C VOL: 0
+; 0000 003B         LDI R31,high(49948)
+        LDI R31,high(49948)
+;PCODE: $0000003D VOL: 0
+; 0000 003C         LDI R30,low(49948)
+        LDI R30,low(49948)
+;PCODE: $0000003E VOL: 0
+; 0000 003D     CicloDelay:
+    CicloDelay:
+;PCODE: $0000003F VOL: 0
+; 0000 003E         LD R0,-z
+        LD R0,-z
+;PCODE: $00000040 VOL: 0
+; 0000 003F         NOP
+        NOP
+;PCODE: $00000041 VOL: 0
+; 0000 0040         NOP
+        NOP
+;PCODE: $00000042 VOL: 0
+; 0000 0041         NOP
+        NOP
+;PCODE: $00000043 VOL: 0
+; 0000 0042         NOP
+        NOP
+;PCODE: $00000044 VOL: 0
+; 0000 0043         NOP
+        NOP
+;PCODE: $00000045 VOL: 0
+; 0000 0044         CPI R31, 00         ;1u
+        CPI R31, 00         ;1u
+;PCODE: $00000046 VOL: 0
+; 0000 0045         BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+        BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+;PCODE: $00000047 VOL: 0
+; 0000 0046         CPI R30, 00         ;1u
+        CPI R30, 00         ;1u
+;PCODE: $00000048 VOL: 0
+; 0000 0047         BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+        BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+;PCODE: $00000049 VOL: 0
+; 0000 0048         RET                 ;4u
+        RET                 ;4u
+;PCODE: $0000004A VOL: 0
+; 0000 0049 
+
+;PCODE: $0000004B VOL: 0
+; 0000 004A     Tabla:
+    Tabla:
+;PCODE: $0000004C VOL: 0
+; 0000 004B         .db 0xFC,0x60,0xDB,0xF3,0x66,0xB7,0xBE,0xE1,0xFE,0xF6
+        .db 0xFC,0x60,0xDB,0xF3,0x66,0xB7,0xBE,0xE1,0xFE,0xF6
+;PCODE: $0000004D VOL: 0
+;PCODE: $0000004E VOL: 0
+; 0000 004C #endasm
+; 0000 004D }
+;PCODE: $0000004F VOL: 0
+;PCODE: $00000050 VOL: 0
+;PCODE: $00000051 VOL: 0

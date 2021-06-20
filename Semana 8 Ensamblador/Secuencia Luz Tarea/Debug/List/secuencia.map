@@ -1,0 +1,24 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+sec1                                                                              0x0A00      14
+sec2                                                                              0x0A0E       6
+cont                                                                              0x0A14       2
+cont2                                                                             0x0A16       2
+acumulador                                                                        0x0A18       2
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+encendido                                                                         GPIOR0.0  1bit
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+Configura595                                                                      0x000C5      4
+Write595asm                                                                       0x000C9     17
+main                                                                              0x000DA    112

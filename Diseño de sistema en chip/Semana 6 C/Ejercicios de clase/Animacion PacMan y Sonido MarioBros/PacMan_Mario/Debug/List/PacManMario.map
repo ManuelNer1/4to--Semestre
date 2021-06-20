@@ -1,0 +1,36 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            0x0300       1
+j                                                                                 0x0301       2
+PacMan1                                                                           0x0303       8
+PacMan2                                                                           0x030B       8
+PacMan3                                                                           0x0313       8
+PacMan4                                                                           0x031B       8
+i                                                                                 0x0323       1
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x002E7     44
+PulseEn                                                                           0x00313      3
+SendDataBitsLCD                                                                   0x00316     26
+WriteComandLCD                                                                    0x00330     12
+CharLCD                                                                           0x0033C     12
+StringLCD                                                                         0x00348     25
+MoveCursor                                                                        0x00361     31
+CreateChar                                                                        0x00380     27
+tono                                                                              0x0039B     65
+noTono                                                                            0x003DC      7
+read_adc                                                                          0x003E3     28
+DelayPacman                                                                       0x003FF      6
+nota                                                                              0x00405     66
+main                                                                              0x00447    108

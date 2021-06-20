@@ -1,0 +1,28 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+dato                                                                              0x0300       1
+dataso                                                                            0x0301       4
+SieteSeg                                                                          0x0305      16
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+read_adc                                                                          0x00087     25
+timer1_compa_isr                                                                  0x000A0      6
+main                                                                              0x000A6    193
+getchar                                                                           0x00167      7
+putchar                                                                           0x0016E     10
+put_usart_G100                                                                    0x00178     13
+_print_G100                                                                       0x00185    308
+printf                                                                            0x002B9     37
+strlen                                                                            0x002DE     12
+strlenf                                                                           0x002EA     13

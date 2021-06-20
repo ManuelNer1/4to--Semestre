@@ -1,0 +1,130 @@
+;/*
+; * mem.c
+; *
+; * Created: 16/05/2021 09:42:41 a. m.
+; * Author: ManuelNeri
+; */
+;
+;#include <io.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x01
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x0E
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_adc_noise_red=0x02
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powerdown=0x04
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_powersave=0x06
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_standby=0x0C
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_ext_standby=0x0E
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=smcr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;void main(void)
+; 0000 000B {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+; 0000 000C     #asm
+;PCODE: $0000000E VOL: 0
+; 0000 000D     .equ DDRB = 4
+    .equ DDRB = 4
+;PCODE: $0000000F VOL: 0
+; 0000 000E     .equ PORTB = 5
+    .equ PORTB = 5
+;PCODE: $00000010 VOL: 0
+; 0000 000F 
+
+;PCODE: $00000011 VOL: 0
+; 0000 0010 Inicio:
+Inicio:
+;PCODE: $00000012 VOL: 0
+; 0000 0011     SBI DDRB, 0     ;Configurando PB0 de salida     //DDRB.0 = 1
+    SBI DDRB, 0     ;Configurando PB0 de salida     //DDRB.0 = 1
+;PCODE: $00000013 VOL: 0
+; 0000 0012 
+
+;PCODE: $00000014 VOL: 0
+; 0000 0013 Ciclo:
+Ciclo:
+;PCODE: $00000015 VOL: 0
+; 0000 0014     SBI PORTB, 0    ;PB0 = 1    (Prende el led)     //PORTB.0 = 1
+    SBI PORTB, 0    ;PB0 = 1    (Prende el led)     //PORTB.0 = 1
+;PCODE: $00000016 VOL: 0
+; 0000 0015     RCALL DelayMedioSeg
+    RCALL DelayMedioSeg
+;PCODE: $00000017 VOL: 0
+; 0000 0016     CBI PORTB, 0    ;PB0 = 0    (Apaga el led)      //PORTB.0 = 0
+    CBI PORTB, 0    ;PB0 = 0    (Apaga el led)      //PORTB.0 = 0
+;PCODE: $00000018 VOL: 0
+; 0000 0017     RCALL DelayMedioSeg ;3u
+    RCALL DelayMedioSeg ;3u
+;PCODE: $00000019 VOL: 0
+; 0000 0018     RJMP Ciclo
+    RJMP Ciclo
+;PCODE: $0000001A VOL: 0
+; 0000 0019 
+
+;PCODE: $0000001B VOL: 0
+; 0000 001A DelayMedioSeg:
+DelayMedioSeg:
+;PCODE: $0000001C VOL: 0
+; 0000 001B     LDI R31, high(49935)     ;1u
+    LDI R31, high(49935)     ;1u
+;PCODE: $0000001D VOL: 0
+; 0000 001C     LDI R30, low(49935)      ;1u
+    LDI R30, low(49935)      ;1u
+;PCODE: $0000001E VOL: 0
+; 0000 001D 
+
+;PCODE: $0000001F VOL: 0
+; 0000 001E CicloDelay:
+CicloDelay:
+;PCODE: $00000020 VOL: 0
+; 0000 001F     LD R0, -Z           ;2u
+    LD R0, -Z           ;2u
+;PCODE: $00000021 VOL: 0
+; 0000 0020     NOP                 ;1u
+    NOP                 ;1u
+;PCODE: $00000022 VOL: 0
+; 0000 0021     NOP
+    NOP
+;PCODE: $00000023 VOL: 0
+; 0000 0022     NOP
+    NOP
+;PCODE: $00000024 VOL: 0
+; 0000 0023     CPI R31, 00         ;1u
+    CPI R31, 00         ;1u
+;PCODE: $00000025 VOL: 0
+; 0000 0024     BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+    BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+;PCODE: $00000026 VOL: 0
+; 0000 0025     CPI R30, 00         ;1u
+    CPI R30, 00         ;1u
+;PCODE: $00000027 VOL: 0
+; 0000 0026     BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+    BRNE CicloDelay     ;2u (si brinca) 1u (no brinca)
+;PCODE: $00000028 VOL: 0
+; 0000 0027     RET                 ;4u
+    RET                 ;4u
+;PCODE: $00000029 VOL: 0
+; 0000 0028 
+
+;PCODE: $0000002A VOL: 0
+;PCODE: $0000002B VOL: 0
+; 0000 0029     #endasm
+; 0000 002A }
+;PCODE: $0000002C VOL: 0
+;PCODE: $0000002D VOL: 0
+;PCODE: $0000002E VOL: 0

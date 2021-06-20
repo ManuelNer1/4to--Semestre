@@ -1,0 +1,11 @@
+VERSION:3 SOURCE_TIMESTAMP:52B9BEC6
+NODE:I LEVEL:0 LINE:8 "C:\cvavr\inc\io.h"
+NODE:I LEVEL:0 LINE:9 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavr\inc\delay.h"
+NODE:V LEVEL:0 LINE:12 "dato -> RAM:????"
+NODE:V LEVEL:0 LINE:13 "dataso -> RAM:????"
+NODE:V LEVEL:0 LINE:14 "SieteSeg -> RAM:????"
+NODE:M LEVEL:0 LINE:20 "ADC_VREF_TYPE"
+NODE:F LEVEL:0 LINE:24 "read_adc(unsigned char adc_input)"
+NODE:F LEVEL:0 LINE:38 "timer1_compa_isr(void)"
+NODE:F LEVEL:0 LINE:43 "main(void)"

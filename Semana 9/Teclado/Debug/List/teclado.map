@@ -1,0 +1,27 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+cursor                                                                            0x0A00       1
+c                                                                                 0x0A01       1
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+SetupLCD                                                                          0x000B0     44
+PulseEn                                                                           0x000DC      3
+SendDataBitsLCD                                                                   0x000DF     27
+WriteComandLCD                                                                    0x000FA     12
+CharLCD                                                                           0x00106     12
+MoveCursor                                                                        0x00112     31
+tono                                                                              0x00131     66
+SetupKeypad                                                                       0x00173      8
+ReadKeypad                                                                        0x0017B    104
+main                                                                              0x001E3     29

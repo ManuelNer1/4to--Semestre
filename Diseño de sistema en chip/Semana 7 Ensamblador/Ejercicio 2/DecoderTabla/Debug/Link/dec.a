@@ -1,0 +1,119 @@
+;/*
+; * dec.c
+; *
+; * Created: 17/05/2021 09:46:02 a. m.
+; * Author: ManuelNeri
+; */
+;
+;#include <io.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x01
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x0E
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_adc_noise_red=0x02
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powerdown=0x04
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_powersave=0x06
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_standby=0x0C
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_ext_standby=0x0E
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=smcr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;void main(void)
+; 0000 000B {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+; 0000 000C #asm
+;PCODE: $0000000E VOL: 0
+; 0000 000D     .EQU DDRD = 0x0A
+    .EQU DDRD = 0x0A
+;PCODE: $0000000F VOL: 0
+; 0000 000E     .EQU PORTC = 8
+    .EQU PORTC = 8
+;PCODE: $00000010 VOL: 0
+; 0000 000F     .EQU PINC = 6
+    .EQU PINC = 6
+;PCODE: $00000011 VOL: 0
+; 0000 0010     .EQU PORTD = 0x0B
+    .EQU PORTD = 0x0B
+;PCODE: $00000012 VOL: 0
+; 0000 0011 
+
+;PCODE: $00000013 VOL: 0
+; 0000 0012     Inicio:
+    Inicio:
+;PCODE: $00000014 VOL: 0
+; 0000 0013         LDI R16,0xFF
+        LDI R16,0xFF
+;PCODE: $00000015 VOL: 0
+; 0000 0014         OUT DDRD,R16    ;Salida en PDO A PD7
+        OUT DDRD,R16    ;Salida en PDO A PD7
+;PCODE: $00000016 VOL: 0
+; 0000 0015         LDI R16,0x0F
+        LDI R16,0x0F
+;PCODE: $00000017 VOL: 0
+; 0000 0016         OUT PORTC,R16   ;Pull-ups en PC0 A PC3
+        OUT PORTC,R16   ;Pull-ups en PC0 A PC3
+;PCODE: $00000018 VOL: 0
+; 0000 0017         CLR R1
+        CLR R1
+;PCODE: $00000019 VOL: 0
+; 0000 0018     Ciclo:
+    Ciclo:
+;PCODE: $0000001A VOL: 0
+; 0000 0019         LDI R31,high(Tabla*2)
+        LDI R31,high(Tabla*2)
+;PCODE: $0000001B VOL: 0
+; 0000 001A         LDI R30,low(Tabla*2)    ;Z apunta al primer elemento de la tabla (dir de 8 bits)
+        LDI R30,low(Tabla*2)    ;Z apunta al primer elemento de la tabla (dir de 8 bits)
+;PCODE: $0000001C VOL: 0
+; 0000 001B         IN R17,PINC
+        IN R17,PINC
+;PCODE: $0000001D VOL: 0
+; 0000 001C         ANDI R17,0x0F
+        ANDI R17,0x0F
+;PCODE: $0000001E VOL: 0
+; 0000 001D         ADD R30,R17
+        ADD R30,R17
+;PCODE: $0000001F VOL: 0
+; 0000 001E         ADC R31,R1
+        ADC R31,R1
+;PCODE: $00000020 VOL: 0
+; 0000 001F         LPM                     ;Leer tabla (z en 8 bits) -> R0
+        LPM                     ;Leer tabla (z en 8 bits) -> R0
+;PCODE: $00000021 VOL: 0
+; 0000 0020         OUT PORTD, R0
+        OUT PORTD, R0
+;PCODE: $00000022 VOL: 0
+; 0000 0021         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000023 VOL: 0
+; 0000 0022 
+
+;PCODE: $00000024 VOL: 0
+; 0000 0023     Tabla:
+    Tabla:
+;PCODE: $00000025 VOL: 0
+; 0000 0024         .db 0xFC,0x60,0xDB,0xF3,0x66,0xB7,0xBE,0xE1,0xFE,0xF6,0xEE,0x3F,0x9C,0x7B,0x9E,0x8E
+        .db 0xFC,0x60,0xDB,0xF3,0x66,0xB7,0xBE,0xE1,0xFE,0xF6,0xEE,0x3F,0x9C,0x7B,0x9E,0x8E
+;PCODE: $00000026 VOL: 0
+;PCODE: $00000027 VOL: 0
+; 0000 0025 #endasm
+; 0000 0026 }
+;PCODE: $00000028 VOL: 0
+;PCODE: $00000029 VOL: 0
+;PCODE: $0000002A VOL: 0
+;

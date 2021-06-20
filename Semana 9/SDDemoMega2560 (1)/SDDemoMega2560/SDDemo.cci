@@ -1,0 +1,10 @@
+VERSION:3 SOURCE_TIMESTAMP:52C78DBB
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\io.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:4 "C:\cvavr\inc\ff.h"
+NODE:I LEVEL:0 LINE:5 "C:\cvavr\inc\display.h"
+NODE:V LEVEL:0 LINE:18 "NombreArchivo -> RAM:????"
+NODE:V LEVEL:0 LINE:19 "TextoEscritura -> RAM:????"
+NODE:F LEVEL:0 LINE:21 "timer1_compa_isr(void)"
+NODE:F LEVEL:0 LINE:28 "main(void)"

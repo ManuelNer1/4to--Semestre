@@ -1,0 +1,17 @@
+/*
+ * memoria.c
+ *
+ * Created: 15/05/2021 12:11:02 p. m.
+ * Author: ManuelNeri
+ */
+
+#include <io.h>
+
+void main(void)
+{
+while (1)
+    {
+    // Please write your application code here
+
+    }
+}

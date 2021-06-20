@@ -1,0 +1,325 @@
+;/*
+; * ejercicio.c
+; *
+; * Created: 17/05/2021 09:19:51 a. m.
+; * Author: ManuelNeri
+; */
+;
+;#include <io.h>
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x01
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x0E
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_adc_noise_red=0x02
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powerdown=0x04
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_powersave=0x06
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_standby=0x0C
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_ext_standby=0x0E
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=smcr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;
+;void main(void)
+; 0000 000B {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+; 0000 000C #asm
+;PCODE: $0000000E VOL: 0
+; 0000 000D     .EQU DDRD = 0x0A
+    .EQU DDRD = 0x0A
+;PCODE: $0000000F VOL: 0
+; 0000 000E     .EQU PORTC = 8
+    .EQU PORTC = 8
+;PCODE: $00000010 VOL: 0
+; 0000 000F     .EQU PINC = 6
+    .EQU PINC = 6
+;PCODE: $00000011 VOL: 0
+; 0000 0010     .EQU PORTD = 0x0B
+    .EQU PORTD = 0x0B
+;PCODE: $00000012 VOL: 0
+; 0000 0011 
+
+;PCODE: $00000013 VOL: 0
+; 0000 0012     Inicio:
+    Inicio:
+;PCODE: $00000014 VOL: 0
+; 0000 0013         LDI R16,0xFF
+        LDI R16,0xFF
+;PCODE: $00000015 VOL: 0
+; 0000 0014         OUT DDRD,R16
+        OUT DDRD,R16
+;PCODE: $00000016 VOL: 0
+; 0000 0015         LDI R16,0x0F
+        LDI R16,0x0F
+;PCODE: $00000017 VOL: 0
+; 0000 0016         OUT PORTC,R16
+        OUT PORTC,R16
+;PCODE: $00000018 VOL: 0
+; 0000 0017         CLR R16
+        CLR R16
+;PCODE: $00000019 VOL: 0
+; 0000 0018     Ciclo:
+    Ciclo:
+;PCODE: $0000001A VOL: 0
+; 0000 0019         OUT PORTD,R16
+        OUT PORTD,R16
+;PCODE: $0000001B VOL: 0
+; 0000 001A         IN R17,PINC
+        IN R17,PINC
+;PCODE: $0000001C VOL: 0
+; 0000 001B         ANDI R17,0x0F
+        ANDI R17,0x0F
+;PCODE: $0000001D VOL: 0
+; 0000 001C         CPI R17,0
+        CPI R17,0
+;PCODE: $0000001E VOL: 0
+; 0000 001D         BREQ Es0
+        BREQ Es0
+;PCODE: $0000001F VOL: 0
+; 0000 001E         CPI R17,1
+        CPI R17,1
+;PCODE: $00000020 VOL: 0
+; 0000 001F         BREQ Es1
+        BREQ Es1
+;PCODE: $00000021 VOL: 0
+; 0000 0020         CPI R17,2
+        CPI R17,2
+;PCODE: $00000022 VOL: 0
+; 0000 0021         BREQ Es2
+        BREQ Es2
+;PCODE: $00000023 VOL: 0
+; 0000 0022         CPI R17,3
+        CPI R17,3
+;PCODE: $00000024 VOL: 0
+; 0000 0023         BREQ Es3
+        BREQ Es3
+;PCODE: $00000025 VOL: 0
+; 0000 0024         CPI R17,4
+        CPI R17,4
+;PCODE: $00000026 VOL: 0
+; 0000 0025         BREQ Es4
+        BREQ Es4
+;PCODE: $00000027 VOL: 0
+; 0000 0026         CPI R17,5
+        CPI R17,5
+;PCODE: $00000028 VOL: 0
+; 0000 0027         BREQ Es5
+        BREQ Es5
+;PCODE: $00000029 VOL: 0
+; 0000 0028         CPI R17,6
+        CPI R17,6
+;PCODE: $0000002A VOL: 0
+; 0000 0029         BREQ Es6
+        BREQ Es6
+;PCODE: $0000002B VOL: 0
+; 0000 002A         CPI R17,7
+        CPI R17,7
+;PCODE: $0000002C VOL: 0
+; 0000 002B         BREQ Es7
+        BREQ Es7
+;PCODE: $0000002D VOL: 0
+; 0000 002C         CPI R17,8
+        CPI R17,8
+;PCODE: $0000002E VOL: 0
+; 0000 002D         BREQ Es8
+        BREQ Es8
+;PCODE: $0000002F VOL: 0
+; 0000 002E         CPI R17,9
+        CPI R17,9
+;PCODE: $00000030 VOL: 0
+; 0000 002F         BREQ Es9
+        BREQ Es9
+;PCODE: $00000031 VOL: 0
+; 0000 0030         CPI R17,0x0A
+        CPI R17,0x0A
+;PCODE: $00000032 VOL: 0
+; 0000 0031         BREQ EsA
+        BREQ EsA
+;PCODE: $00000033 VOL: 0
+; 0000 0032         CPI R17,0x0B
+        CPI R17,0x0B
+;PCODE: $00000034 VOL: 0
+; 0000 0033         BREQ EsB
+        BREQ EsB
+;PCODE: $00000035 VOL: 0
+; 0000 0034         CPI R17,0x0C
+        CPI R17,0x0C
+;PCODE: $00000036 VOL: 0
+; 0000 0035         BREQ EsC
+        BREQ EsC
+;PCODE: $00000037 VOL: 0
+; 0000 0036         CPI R17,0x0D
+        CPI R17,0x0D
+;PCODE: $00000038 VOL: 0
+; 0000 0037         BREQ EsD
+        BREQ EsD
+;PCODE: $00000039 VOL: 0
+; 0000 0038         CPI R17,0x0E
+        CPI R17,0x0E
+;PCODE: $0000003A VOL: 0
+; 0000 0039         BREQ EsE
+        BREQ EsE
+;PCODE: $0000003B VOL: 0
+; 0000 003A     EsF:
+    EsF:
+;PCODE: $0000003C VOL: 0
+; 0000 003B         LDI R16, 0x8E
+        LDI R16, 0x8E
+;PCODE: $0000003D VOL: 0
+; 0000 003C         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000003E VOL: 0
+; 0000 003D     Es0:
+    Es0:
+;PCODE: $0000003F VOL: 0
+; 0000 003E         LDI R16, 0xFC
+        LDI R16, 0xFC
+;PCODE: $00000040 VOL: 0
+; 0000 003F         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000041 VOL: 0
+; 0000 0040     Es1:
+    Es1:
+;PCODE: $00000042 VOL: 0
+; 0000 0041         LDI R16, 0x60
+        LDI R16, 0x60
+;PCODE: $00000043 VOL: 0
+; 0000 0042         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000044 VOL: 0
+; 0000 0043     Es2:
+    Es2:
+;PCODE: $00000045 VOL: 0
+; 0000 0044         LDI R16, 0xDB
+        LDI R16, 0xDB
+;PCODE: $00000046 VOL: 0
+; 0000 0045         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000047 VOL: 0
+; 0000 0046     Es3:
+    Es3:
+;PCODE: $00000048 VOL: 0
+; 0000 0047         LDI R16, 0xF3
+        LDI R16, 0xF3
+;PCODE: $00000049 VOL: 0
+; 0000 0048         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000004A VOL: 0
+; 0000 0049     Es4:
+    Es4:
+;PCODE: $0000004B VOL: 0
+; 0000 004A         LDI R16, 0x66
+        LDI R16, 0x66
+;PCODE: $0000004C VOL: 0
+; 0000 004B         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000004D VOL: 0
+; 0000 004C     Es5:
+    Es5:
+;PCODE: $0000004E VOL: 0
+; 0000 004D         LDI R16, 0xB7
+        LDI R16, 0xB7
+;PCODE: $0000004F VOL: 0
+; 0000 004E         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000050 VOL: 0
+; 0000 004F     Es6:
+    Es6:
+;PCODE: $00000051 VOL: 0
+; 0000 0050         LDI R16, 0xBE
+        LDI R16, 0xBE
+;PCODE: $00000052 VOL: 0
+; 0000 0051         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000053 VOL: 0
+; 0000 0052     Es7:
+    Es7:
+;PCODE: $00000054 VOL: 0
+; 0000 0053         LDI R16, 0xE1
+        LDI R16, 0xE1
+;PCODE: $00000055 VOL: 0
+; 0000 0054         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000056 VOL: 0
+; 0000 0055     Es8:
+    Es8:
+;PCODE: $00000057 VOL: 0
+; 0000 0056         LDI R16, 0xFE
+        LDI R16, 0xFE
+;PCODE: $00000058 VOL: 0
+; 0000 0057         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000059 VOL: 0
+; 0000 0058     Es9:
+    Es9:
+;PCODE: $0000005A VOL: 0
+; 0000 0059         LDI R16, 0xF6
+        LDI R16, 0xF6
+;PCODE: $0000005B VOL: 0
+; 0000 005A         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000005C VOL: 0
+; 0000 005B     EsA:
+    EsA:
+;PCODE: $0000005D VOL: 0
+; 0000 005C         LDI R16, 0xEE
+        LDI R16, 0xEE
+;PCODE: $0000005E VOL: 0
+; 0000 005D         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000005F VOL: 0
+; 0000 005E     EsB:
+    EsB:
+;PCODE: $00000060 VOL: 0
+; 0000 005F         LDI R16, 0x3F
+        LDI R16, 0x3F
+;PCODE: $00000061 VOL: 0
+; 0000 0060         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000062 VOL: 0
+; 0000 0061     EsC:
+    EsC:
+;PCODE: $00000063 VOL: 0
+; 0000 0062         LDI R16, 0x9C
+        LDI R16, 0x9C
+;PCODE: $00000064 VOL: 0
+; 0000 0063         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000065 VOL: 0
+; 0000 0064     EsD:
+    EsD:
+;PCODE: $00000066 VOL: 0
+; 0000 0065         LDI R16, 0x7B
+        LDI R16, 0x7B
+;PCODE: $00000067 VOL: 0
+; 0000 0066         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $00000068 VOL: 0
+; 0000 0067     EsE:
+    EsE:
+;PCODE: $00000069 VOL: 0
+; 0000 0068         LDI R16, 0x9E
+        LDI R16, 0x9E
+;PCODE: $0000006A VOL: 0
+; 0000 0069         RJMP Ciclo
+        RJMP Ciclo
+;PCODE: $0000006B VOL: 0
+;PCODE: $0000006C VOL: 0
+; 0000 006A #endasm
+; 0000 006B }
+;PCODE: $0000006D VOL: 0
+;PCODE: $0000006E VOL: 0
+;PCODE: $0000006F VOL: 0
